@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+ front:
+    container_name: front_app
+    tty: true
+    build:
+      context: ./node
+    ports:
+      - ${FRONT_PORT}:3000
+    volumes:
+      - ./app_front:/usr/src/app/my-app
+    environment:
+      HOST: 0.0.0.0
